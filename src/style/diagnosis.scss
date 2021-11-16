@@ -1,0 +1,95 @@
+@import './valiables.scss';
+
+#diagnosisComponent {
+  #diagnosisTop {
+    @include initSize(100%, 190px);
+    background-color: $back1;
+    position: fixed;
+    #selectDiagnosis {
+      @include initSize(90%, 40px);
+      @include initFont(14px, 500, $gray1);
+      line-height: 35px;
+      position: fixed;
+      left: 5%;
+      margin-top: 90px;
+      background-color: #efeff0;
+      border-radius: 10px;
+      .selection {
+        display: inline-block;
+        width: 50%;
+      }
+      #selected {
+        @include shadow();
+        color: $color2;
+        height: 35px;
+        margin-top: 2px;
+        background-color: $back1;
+        border-radius: 8px;
+      }
+    }
+    #bottomInfo {
+      display: inline-block;
+      position: fixed;
+      top: 145px;
+      left: calc(50% - 183px);
+      color: $gray1;
+      svg *{
+        stroke: $gray1;
+      }
+    }
+  }
+
+  #diagnosisItemWrap {
+    padding: 20px 5% 100px 5%; 
+    background-color: $color4;
+  }
+}
+
+.diagnosisItem {
+  margin-top: 190px;
+  .item {
+    margin: 40px auto;
+  }
+  #simpleItem {
+    #title, #subtitle {
+      text-align: left;
+    }
+    #title {
+      @include initFont(14px, 500, $black1);
+      margin: 0;
+      line-height: 22px;
+    }
+    #subtitle {
+      @include initFont(12px, normal, $gray1);
+      width: 90%;
+      margin: 0 auto;
+    }
+    label {
+      margin-left: 20px;
+    }
+    #radioSet {
+      text-align: right;
+      margin: 20px auto;
+    }
+    
+  }
+}
+
+#detailDiagnosisItem {
+  tr {
+    td {
+      width: 40px;
+      text-align: center;
+    }
+  }
+  #radioSet {
+    #head {
+      text-align: center;
+    }
+    #body {
+      label {
+        margin: 0 0 0 5px;
+      }
+    }
+  }
+}
