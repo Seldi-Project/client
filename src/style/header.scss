@@ -1,0 +1,21 @@
+@import './valiables.scss';
+
+.header {
+  @include initSize(100%, 50px, 0);
+  padding-top: 30px;
+  background-color: $back1;
+  position: fixed;
+  z-index: 3;
+  .left {
+    @include initSize(60px, auto, auto, auto, auto, 0);
+    display: inline-block;
+    position: absolute;
+  }
+  .center {
+    @include initSize(100%, 24px);
+    @include initFont(16px, 500, $black1);
+    @include marginPadding((4px auto));
+    text-align: center;
+    line-height: 24px;
+  }
+}
