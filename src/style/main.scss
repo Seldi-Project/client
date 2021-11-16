@@ -1,0 +1,165 @@
+@import './valiables.scss';
+
+#mainComponent {
+  * {
+    z-index: 1;
+  }
+  #searchDiv {
+    @include initSize(100%, auto, 50px);
+    position: fixed;
+    #searchIcon {
+      position: absolute;
+      top: 12px;
+      left: 10%;
+    }
+    #searchInput {
+      @include initFont(14px, normal, $gray1);
+      width: calc(88% - 15vw);
+      padding-left: 15vw;
+      text-align: left;
+    }
+  }
+}
+
+#infoComponent {
+  @include initSize(100%, auto, 120px);
+  position: fixed;
+  * {
+    z-index: 1;
+  }
+  #infoWrap {
+    @include marginPadding((0 auto), (20px 10px));
+    @include shadow();
+    width: calc(90% - 20px);
+    border-radius: 8px;
+    background-image: linear-gradient(112deg, $color2 56%, $color1 107%);
+    * {
+      color: $back1;
+    }
+    #maskIcon {
+      position: absolute;
+      top: -5%;
+      right: calc(4% - 5px);
+    }
+    p {
+      text-align: left;
+    }
+    #infoMessage1 {
+      font-size: 18px;
+      margin: 20px 0 5px 2%;
+    }
+    #infoMessage2 {
+      font-size: 12px;
+      margin: 0 0 0 2%;
+    }
+    #qrWrap {
+      @include initSize(40px, 40px, 64px, 8%);
+      position: absolute;
+      line-height: 50px;
+      display: inline-block;
+      background-color: $back1;
+      border-radius: 4px;
+    }
+  }
+  #bottomInfo {
+    @include initSize(90%, 24px);
+    @include initFont(11px, normal, $color2);
+    @include shadow;
+    margin: 10px auto;
+    border-radius: 11px;
+    background-color: $back1;
+  }
+}
+
+#bottomInfoComponent {
+  width: 100%;
+  margin-top: 650px;
+  padding: 18px 0;
+  height: max-content;
+  background-color: $back1;
+  position: absolute;
+  overflow-y: hidden;
+  * {
+    z-index: 3;
+  }
+  #liveInfoWrap {
+    #liveInfo {
+      @include marginPadding((0 auto), (10px 0));
+      width: 90%;
+      border-radius: 8px;
+      background-color: $gray2;
+      #tr1 {
+        @include initFont(12px, normal, $gray1);
+      }
+      #tr2 {
+        * {
+          @include initFont(20px, 500);
+        }
+        #liveStd {
+          color: $black1;
+        }
+        #liveSym {
+          color: $color2;
+        }
+      }
+    }
+  }
+}
+
+#certificationComponent, #confirmedComponent {
+  .bottomInfoHeader {
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    * {
+      margin: 0 auto;
+    }
+    #title {
+      @include initFont(16px, normal, $black1);
+      margin-top: 20px;
+    }
+    #subTitle {
+      @include initFont(12px, normal, $gray1);
+      margin-top: 7px;
+    }
+  }
+}
+
+#certificationComponent {
+  #certifications {
+    width: fit-content;
+    .certification {
+      @include initBack(-65deg, 17%, 86%);
+      @include shadow;
+      width: fit-content;
+      margin: 10px;
+      display: inline-block;
+      border-radius: 8px;
+    }
+  }
+}
+
+#confirmedComponent {
+  
+}
+
+#infoHeaderComponent {
+  #infoHeader {
+    height: 20px;
+    #infoHeaderLeft {
+      position: absolute;
+      display: inline-block;
+      left: 9%;
+      font-size: 14px;
+    }
+    #infoHeaderRight {
+      position: absolute;
+      padding-top: 2px;
+      right: 9%;
+      font-size: 12px;
+      #seldi {
+        @include initFont(14px, 500, $color3);
+      }
+    }
+  }
+}

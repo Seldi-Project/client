@@ -1,0 +1,28 @@
+@import './valiables.scss';
+
+#map {
+  @include initSize(100%, 100vh, 0);
+  z-index: 0;
+  position: fixed;
+}
+#locationIcon, #gpsIcon {
+  @include initSize(40px, 40px);
+  @include shadow();
+  z-index: 1;
+  position: relative;
+  display: inline-block;
+  background-color: $back1;
+  border-radius: 40px;
+  bottom: 22%;
+  svg {
+    margin-top: 7px;
+  }
+}
+#gpsIcon {
+  position: fixed;
+  left: 5%;
+}
+#locationIcon {
+  position: fixed;
+  right: 5%;
+}
