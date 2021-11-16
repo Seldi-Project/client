@@ -1,0 +1,59 @@
+@import './valiables.scss';
+
+#qrCodeComponent {
+  #goDetailBtn {
+    @include initBack(135deg, 72%, 104%);
+    @include initFont(14px, normal, $back1);
+    line-height: 64px;
+  }
+  padding-bottom: 30px;
+}
+
+#qrItemComponent {
+  @include initSize(90%, fit-content);
+  @include shadow(0, 4px, 10px, 0, rgba(0, 0, 0, 0.2));
+  margin: 50px auto;
+  margin-top: 130px;
+  border-radius: 8px;
+  #infoHeader {
+    padding: 10px 0;
+  }
+  #x {
+    margin: 0 7px;
+    color: $gray1;
+  }
+  #qrItemWrap {
+    @include initSize(90%, 360px);
+    margin: 0 auto;
+    p {
+      margin: 0;
+    }
+    #title {
+      @include initFont(18px, 500, $color2);
+      text-align: left;
+      margin-top: 10px;
+    }
+    #subTitle {
+      @include initFont(12px, normal, $gray1);
+      text-align: left;
+      margin-top: 7px;
+    }
+    #qrBottomInfo {
+      margin-top: 24px;
+      p {
+        @include initFont(14px, normal, $black1);
+        margin: 0;
+        text-align: left;
+      }
+    }
+    #diInfo {
+      @include initFont(14px, normal, $color2);
+      @include initSize(fit-content, auto, 470px, 10%);
+      position: absolute;
+      text-align: center;
+      p {
+        margin: 0
+      }
+    }
+  }
+}
