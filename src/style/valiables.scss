@@ -1,0 +1,47 @@
+$color1: #1153fc;
+$color2: #5581f1;
+$color3: #2d66f8;
+$color4: #f5f8ff;
+$back1: #ffffff;
+$gray1: #999;
+$gray2: #f3f3f3;
+$black1: #222;
+
+
+@mixin initSize($width: 100%, $height: auto, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+  width: $width;
+  height: $height;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin marginPadding($margin-size: (0 auto), $padding-size: (0 auto)) {
+  margin: $margin-size;
+  padding: $padding-size;
+}
+
+@mixin initFont($size:16px, $weight:100, $color:$black1) {
+  font-family: noto-sans-cjk-kr;
+  font-size: $size;
+  font-weight: $weight;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $color;
+}
+
+@mixin initBack($v0, $v1, $v2) {
+  background-image: linear-gradient($v0, $color3 $v1, $color2 $v2);
+}
+
+@mixin shadow($x:0, $y:2px, $blur:5px, $spread:0, $color:rgba(0, 0, 0, 0.2)) {
+  box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin initBorder($radius:0, $border:none) {
+  border-radius: $radius;
+  border: $border;
+}

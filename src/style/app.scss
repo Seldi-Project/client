@@ -1,0 +1,137 @@
+@import './valiables.scss';
+
+html, body {
+  @include marginPadding();
+  font-family: noto-sans-cjk-kr;
+}
+
+.App{
+  @include initSize(100%, fit-content);
+  text-align: center;
+}
+
+.component {
+  //background-color: gray;  //test
+}
+
+.item {
+  width: 100%;
+}
+
+input[type="text"] {
+  @include shadow();
+  @include initBorder(8px);
+  height: 48px;
+}
+
+#bottomInfo {
+  @include initFont(12px, normal, $color2);
+  height: 24px;
+  padding: 3px 0;
+  #bottomInfoIcon {
+    position: absolute;
+    padding-top: 2px;
+  }
+  #bottomInfoMessage {
+    @include initSize(fit-content, 24px);
+    @include marginPadding((0 auto), (0 0 0 22px));
+    display: inline-block;
+    line-height: 24px;
+  }
+}
+
+//select
+.select {
+  @include initFont(12px, 100);
+  @include initSize(31%, 32px);
+  @include shadow();
+  @include initBorder(16px);
+  line-height: 32px;
+  padding-left: 12px;
+  display: inline-block;
+  background-color: $back1;
+  color: $color2;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  background-image: url('../source/TimeIcon.svg');
+  background-repeat: no-repeat, repeat;
+  background-position: right .6em top 50%, 0 0;
+  background-size: 24px;
+}
+
+.select::-ms-expand {
+  display: none;
+}
+
+input:focus, .select:focus {
+  @include shadow();
+  border-color: none;
+  outline: none;
+}
+
+input[type=radio] {
+  margin:0; padding:0; opacity:0; 
+  background:url(../source/Checknone.svg) no-repeat 0 0;  
+  width:0;
+} 
+input[type=radio] + label {
+  @include initFont(14px, normal, $gray1);
+  display: inline-block; 
+  text-align: left; height:20px; padding-left: 25px; 
+  background: url(../source/Checknone.svg) no-repeat 0 0; 
+  line-height: 130%; vertical-align: top;
+}
+input[type=radio]:checked + label {
+  @include initFont(14px, 500, $color2);
+  background: url(../source/Check.svg) no-repeat 0 0;
+}
+
+//
+
+.btn {
+  @include shadow();
+  @include initSize(90vw, 64px);
+  @include marginPadding();
+  @include initBorder(8px);
+  line-height: 64px;
+  flex-grow: 0;
+  .btnMsg {
+    @include initSize(100%, 64px);
+    position: relative;
+    line-height: 64px;
+  }
+  svg {
+    position: absolute;
+    margin-top: 18px;
+    right: 8%;
+  }
+}
+
+#btnBlue {
+  background-color: $color2;
+  .btnMsg {
+    @include initFont(15px, 500, $back1);
+  }
+}
+
+#btnWhite {
+  background-color: $back1;
+  .btnMsg {
+    @include initFont(15px, 500, $color2);
+  }
+}
+
+
+//reusable
+#timeSelect {
+  @include initSize(90%);
+  @include marginPadding((0 auto), 10px);
+  text-align: right;
+}
