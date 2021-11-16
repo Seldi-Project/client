@@ -1,0 +1,80 @@
+@import './valiables.scss';
+
+#liveComponent {
+  #fixedTop {
+    @include initSize();
+    position: fixed;
+    z-index: 2;
+    margin-top: 80px;
+    .subtitle {
+      @include initFont(12px, 100, $gray1);
+      margin: 2px auto;
+    }
+    #liveHeader {
+      #date {
+        @include initFont(14px, 100, $gray1);
+        position: absolute;
+        margin-top: 16px;
+        left: 5%;
+      }
+      .select {
+        border: solid 1px $color2;
+      }
+    }
+  }
+  #liveItems {
+    @include initSize(100vw, calc(100vh - 150px), auto, auto, 0);
+    position: absolute;
+    background-color: #f5f8ff;
+    overflow-y: scroll;
+    #myItem {
+      padding-top: 20px;
+    }
+    .liveItem {
+      margin: 30px auto;
+      .liveTitleTable {
+        width: 90vw;
+        margin: 0 auto;
+        #dist {
+          @include initFont(12px, 500, $color2);
+          width: 45vw;
+          text-align: left;
+        }
+        #num {
+          @include initFont(12px, 500, $black1);
+          width: 45vw;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+#liveItem {
+  #liveTable {
+    @include initSize(90vw, 80px);
+    @include shadow();
+    margin: 10px auto;
+    border-radius: 8px;
+    background-color: $back1;
+    #user {
+      @include initFont(12px, 100, $gray1);
+      width: 30px;
+      padding: 0 8px;
+    }
+    #desc {
+      @include initFont(14px, 100, $black1);
+      width: calc(90vw - 92px);
+      padding: 10px 1px;
+      text-align: left;
+      word-break: break-all;
+    }
+    #state {
+      width: 30px;
+      padding: 0 8px;
+      svg {
+        margin-top: 5px;
+      }
+    }
+  }
+}
