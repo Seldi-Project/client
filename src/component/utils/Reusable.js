@@ -42,3 +42,11 @@ export const time = [
 
 const date = new Date();
 export const today = date.getMonth()+1 + "/" + date.getDate() + " (" + days[date.getDay()] + ")";
+
+//학교 - 정렬 필
+export const school = [
+  { name: "학교를 선택해주세요.", code: "학교를 선택해주세요.", mail: "학교를 선택해주세요."},
+  { name: "삼육대학교", code: "1", mail: "syuin.ac.kr" },
+  { name: "중앙대학교", code: "2", mail: "cau.ac.kr" },
+  { name: "한국산업기술대학교", code: "3", mail: "?" },
+]
