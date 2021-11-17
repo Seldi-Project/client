@@ -1,9 +1,9 @@
 @import './valiables.scss';
 
 #startComponent {
-  @include initSize(100%, 75vh);
+  @include initSize(100%, 80vh);
   @include initBack(315deg, 133%, 18%);
-  padding: 25vh 0 0 0;
+  padding: 20vh 0 0 0;
   #startLogoDiv {
     text-align: center;
     svg {

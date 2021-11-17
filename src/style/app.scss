@@ -123,6 +123,7 @@ input[type=radio]:checked + label {
 
 #btnWhite {
   background-color: $back1;
+  margin-bottom: 10px;
   .btnMsg {
     @include initFont(15px, 500, $color2);
   }
