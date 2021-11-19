@@ -1,0 +1,23 @@
+@import './valiables.scss';
+
+#loadingComponent {
+  @include initSize(100%, 100vh);
+  position: fixed;
+  background-color: white;
+  opacity: 0.5;
+  text-align: center;
+  z-index: 5;
+  svg {
+    position: absolute;
+    top: calc(50% - 30px);
+    left: calc(50% - 15px);
+    animation: rotate_image 1s linear infinite;
+    transform-origin: 50% 50%;
+  }
+}
+
+@keyframes rotate_image{ 
+  100% { 
+    transform: rotate(360deg);
+  } 
+}
