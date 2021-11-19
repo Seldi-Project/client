@@ -10,10 +10,6 @@ html, body {
   text-align: center;
 }
 
-.component {
-  //background-color: gray;  //test
-}
-
 .item {
   width: 100%;
 }
@@ -135,4 +131,12 @@ input[type=radio]:checked + label {
   @include initSize(90%);
   @include marginPadding((0 auto), 10px);
   text-align: right;
+}
+
+
+//font
+@font-face {
+  font-family: 'GmarketSansBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+  font-style: normal;
 }

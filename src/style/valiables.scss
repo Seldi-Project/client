@@ -33,6 +33,13 @@ $black1: #222;
   color: $color;
 }
 
+@mixin logoFont($size:36px, $weight:bold, $color:$back1) {
+  font-family: GmarketSansBold;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
 @mixin initBack($v0, $v1, $v2) {
   background-image: linear-gradient($v0, $color3 $v1, $color2 $v2);
 }

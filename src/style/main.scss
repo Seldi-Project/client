@@ -158,7 +158,7 @@
       right: 9%;
       font-size: 12px;
       #seldi {
-        @include initFont(14px, 500, $color3);
+        @include logoFont(14px, 500, $color3);
       }
     }
   }
