@@ -43,10 +43,21 @@ export const time = [
 const date = new Date();
 export const today = date.getMonth()+1 + "/" + date.getDate() + " (" + days[date.getDay()] + ")";
 
-//학교 - 정렬 필
+//학교
 export const school = [
-  { name: "학교를 선택해주세요.", code: "학교를 선택해주세요.", mail: "학교를 선택해주세요."},
-  { name: "삼육대학교", code: "1", mail: "syuin.ac.kr" },
-  { name: "중앙대학교", code: "2", mail: "cau.ac.kr" },
-  { name: "한국산업기술대학교", code: "3", mail: "?" },
+  { collegeName: "학교를 선택해주세요.", collegeId: "학교를 선택해주세요.", mail: "학교를 선택해주세요."},
+  { collegeName: "삼육대학교", collegeId: "1", mail: "syuin.ac.kr" },
+  { collegeName: "중앙대학교", collegeId: "2", mail: "cau.ac.kr" },
+  { collegeName: "한국산업기술대학교", collegeId: "3", mail: "?" },
+]
+
+//진단 문항
+export const diagnosisData = [
+  { title: "현재 37.5도 이상이거나, 발열감이 있나요?"},
+  { title: "평소 기저질환 외에 아래와 같은 증상이 있나요?", 
+    subtitle: "'기침, 가래, 콧물, 호흡곤란, 오한, 근육통, 두통, 인후통, 후각·미각 소실 또는 폐렴",
+    subColor: "red"},
+  { title: "본인 혹은 동거인이 자가격리자 대상인가요?",
+    subtitle: "(동거인 자가격리는 진단 결과가 음성이면 아니요 체크)"},
+  { title: "허위답변으로 인한 문제 발생시 처벌을 받을 수 있고 개인정보가 수집/처리/제공되는 것에 동의합니다."}
 ]
