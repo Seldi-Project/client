@@ -11,6 +11,20 @@
     display: inline-block;
     position: absolute;
   }
+  .process {
+    width: max-content;
+    margin: 0 auto;
+    .processItem {
+      @include initSize(8px, 8px);
+      margin: 0 8px;
+      border-radius: 8px;
+      display: inline-block;
+      background-color: #d8d8d8;
+    }
+    #selected {
+      background-color: $color2;
+    }
+  }
   .center {
     @include initSize(100%, 24px);
     @include initFont(16px, 500, $black1);
