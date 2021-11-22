@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { ReactComponent as Logo } from '../../source/Logo.svg';
+import Header from '../utils/Header';
 import { loginAction, getProfileAction } from '../../module/user';
 import '../../style/start.scss';
 
@@ -31,12 +33,18 @@ export default function Login() {
 
   return (
     <div className="component" id="loginComponent">
-      <label htmlFor="email">이메일</label>
-      <input name="email" type="text" onChange={(e) => setEmailState(e.target.value)}/>
+      <Header left={true} title="로그인"/>
+      <div id="logoDiv">
+        <Logo/>
+        <p id="startTitle">Seldi</p>
+      </div>
 
-      <label htmlFor="pw">비밀번호</label>
-      <input name="pw" type="password" onChange={(e) => setPwState(e.target.value)}/>
-    
+      <form>
+        <input name="email" type="text" placeholder="이메일" onChange={(e) => setEmailState(e.target.value)}/>
+
+        <input name="pw" type="password" placeholder="패스워드" onChange={(e) => setPwState(e.target.value)}/>
+      </form>
+
       <div className="btn" id="btnBlue" onClick={login}>
         <span className="btnMsg">로그인</span>
       </div>
