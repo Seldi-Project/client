@@ -43,12 +43,20 @@ export const time = [
 const date = new Date();
 export const today = date.getMonth()+1 + "/" + date.getDate() + " (" + days[date.getDay()] + ")";
 
+//가입
+export const schoolList = [
+  { collegeName: "삼육대학교", collegeId: "1", mail: "syuin.ac.kr", desc: ['삼육', '삼육대', '삼육대학교'] },
+  { collegeName: "중앙대학교", collegeId: "2", mail: "cau.ac.kr", desc: ['중앙', '중앙대', '중앙대학교'] },
+  { collegeName: "한국산업기술대학교", collegeId: "3", mail: "?", desc: ['한산기', '한국산업기술', '한국산업기술대학교'] },
+  { collegeName: "삼육보건대학교", collegeId: "4", mail: "syuin.ac.kr", desc: ['삼육', '삼육보건ㄷ', '삼육보건대학교'] },
+]
 //학교
 export const school = [
-  { collegeName: "학교를 선택해주세요.", collegeId: "학교를 선택해주세요.", mail: "학교를 선택해주세요."},
-  { collegeName: "삼육대학교", collegeId: "1", mail: "syuin.ac.kr" },
-  { collegeName: "중앙대학교", collegeId: "2", mail: "cau.ac.kr" },
-  { collegeName: "한국산업기술대학교", collegeId: "3", mail: "?" },
+  { collegeName: "학교를 선택해주세요.", collegeId: "학교를 선택해주세요.", mail: "학교를 선택해주세요.", desc: ['']},
+  { collegeName: "삼육대학교", collegeId: "1", mail: "syuin.ac.kr", desc: ['삼육', '삼육대', '삼육대학교'] },
+  { collegeName: "중앙대학교", collegeId: "2", mail: "cau.ac.kr", desc: ['중앙', '중앙대', '중앙대학교'] },
+  { collegeName: "한국산업기술대학교", collegeId: "3", mail: "?", desc: ['한산기', '한국산업기술', '한국산업기술대학교'] },
+  { collegeName: "삼육보건대학교", collegeId: "4", mail: "syuin.ac.kr", desc: ['삼육', '삼육보건ㄷ', '삼육보건대학교'] },
 ]
 
 //진단 문항

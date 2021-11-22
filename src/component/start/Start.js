@@ -10,7 +10,7 @@ export default function Start() {
   return (
     <div className="component" id="startComponent">
 
-      <div id="startLogoDiv">
+      <div id="logoDiv">
         <Logo/>
         <p id="startTitle">Seldi</p>
       </div>
@@ -25,7 +25,7 @@ export default function Start() {
         <ExpandRight/>
       </div>
 
-      <div className="btn" id="btnWhite" onClick={() => navigate("/join")}>
+      <div className="btn" id="btnWhite" onClick={() => navigate("/join1")}>
         <span className="btnMsg">회원가입</span>
         <ExpandRight/>
       </div>

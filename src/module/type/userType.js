@@ -1,4 +1,9 @@
 //action type
+//회원가입-학교 선택
+export const SET_JOIN_SCHOOL = "SET_JOIN_SCHOOL";
+//회원가입-메일 입력
+export const SET_JOIN_EMAIL = "SET_JOIN_EMAIL";
+
 //회원가입-메일 전송
 export const SEND_MAIL = "SEND_MAIL";
 export const SEND_MAIL_SUCCESS = "SEND_MAIL_SUCCESS";

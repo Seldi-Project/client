@@ -3,6 +3,8 @@ import { createThunk } from './util/createThunk';
 import { sendMail, verify, register, login, getProfile, putVaccine } from './api/userAPI';
 
 import {  //액션 타입
+  SET_JOIN_SCHOOL,  //회원가입-학교 선택
+  SET_JOIN_EMAIL,  //회원가입-메일 선택
   SEND_MAIL, SEND_MAIL_SUCCESS, SEND_MAIL_ERROR,  //회원가입-메일 전송
   VERIFY, VERIFY_SUCCESS, VERIFY_ERROR,  //회원가입-메일 인증
   REGISTER, REGISTER_SUCCESS, REGISTER_ERROR,  //회원가입
@@ -32,6 +34,9 @@ const INIT_USER_STATE = {
     collegeId: 1,  //****추가필
   },
   join: {
+    keyword: "",
+    schoolState: { collegeId: "학교를 선택해주세요.", mail: "학교를 선택해주세요.", collegeName: "학교를 선택해주세요." },
+    email: "",
     mailState: false,
     verifyState: false
   },
@@ -40,6 +45,10 @@ const INIT_USER_STATE = {
   error: false
 };
 
+//회원가입-학교 선택
+export const setSchoolAction = (schoolKeyword, schoolState) => ({ type: SET_JOIN_SCHOOL, payload: {schoolKeyword, schoolState} });
+//회원가입-메일 입력
+export const setMailAction = (email) => ({ type: SET_JOIN_EMAIL, payload: email })
 //회원가입-메일 전송
 export const sendMailAction = createThunk(SEND_MAIL, sendMail, true);
 //회원가입-메일 인증
@@ -60,8 +69,29 @@ export const resetUser = () => ({ type: RESET_USER });
 
 //reducer
 const user = (state = INIT_USER_STATE, action) => {
-  console.log(action.payload);
+
   switch(action.type) {
+    //join - setSchool
+    case SET_JOIN_SCHOOL:
+      return {
+        ...state,
+        join: {
+          ...state.join,
+          keyword: action.payload.schoolKeyword,
+          schoolState: action.payload.schoolState
+        }
+      }
+    
+    //join - setMail
+    case SET_JOIN_EMAIL:
+      return {
+        ...state,
+        join: {
+          ...state.join,
+          email: action.payload
+        }
+      }
+
     //join - sendMail
     case SEND_MAIL:
       return { 
@@ -128,6 +158,9 @@ const user = (state = INIT_USER_STATE, action) => {
     case REGISTER_SUCCESS:
       return {
         ...state,
+        join: {
+          ...INIT_USER_STATE.join
+        },
         loading: false
       }
     case REGISTER_ERROR:
