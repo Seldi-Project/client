@@ -3,9 +3,11 @@ $color2: #5581f1;
 $color3: #2d66f8;
 $color4: #f5f8ff;
 $back1: #ffffff;
+$backGray: #f3f3f3;
 $gray1: #999;
 $gray2: #f3f3f3;
 $black1: #222;
+$purple: #ad86ff;
 
 
 @mixin initSize($width: 100%, $height: auto, $top: auto, $right: auto, $bottom: auto, $left: auto) {

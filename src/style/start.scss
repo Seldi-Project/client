@@ -36,3 +36,235 @@
     }
   }
 }
+
+#loginComponent {
+  @include initSize(100%, 100%);
+  background-color: $backGray;
+  .header {
+    background-color: transparent;
+  }
+  #logoDiv {
+    padding-top: 164px;
+    #startTitle {
+      color: $color2 !important;
+    }
+  }
+  form {
+    width: 90%;
+    text-align: center;
+    margin: 20px auto;
+    input {
+      width: 90%;
+      padding-left: 16px;
+      margin: 5px auto;
+    }
+  }
+  .btn {
+    margin-top: 30px;
+  }
+}
+
+#logoDiv {
+  text-align: center;
+  svg {
+    @include initSize(40%, 40%);
+    margin: 0 92px 0 93px;
+  }
+  #startTitle {
+    @include logoFont(36px, bold, $back1);
+    @include initSize(101px, auto, -10px);
+    flex-grow: 0;
+    margin: 10px auto 0 auto;
+    position: relative;
+  }
+}
+
+#joinComponent {
+  @include initSize(100%, 100vh);
+  position: fixed;
+  overflow-y: scroll;
+  background-color: $backGray;
+  input[type=checkbox] {
+    margin:0; padding:0; opacity:0;
+    width:0; display: none;
+  } 
+  input[type=checkbox] + label {
+    background-image: url('../source/Checknone.svg');
+    background-repeat: no-repeat, repeat;
+  }
+  input[type=checkbox]:checked + label {
+    background-image: url('../source/Check.svg');
+    background-repeat: no-repeat, repeat;
+  }
+  .header {
+    background-color: $backGray;
+  }
+  form {
+    padding-top: 143px;
+    .btn {
+      position: fixed;
+      left: 5%;
+      bottom: 40px;
+      margin: 110px auto 20px auto;
+    }
+    .inputLabel {
+      @include initFont(18px, 500, $color2);
+      position: absolute;
+      top: 100px;
+      left: 5%;
+    }
+  }
+}
+
+#join1 {
+  #searchDiv {
+    @include initSize(100%, auto);
+    #searchIcon {
+      position: absolute;
+      top: 155px;
+      right: 10%;
+    }
+    #searchInput {
+      @include initFont(14px, normal, $gray1);
+      width: calc(88% - 5vw);
+      padding-left: 5vw;
+      text-align: left;
+    }
+  }
+  #schoolRes {
+    @include initSize(90%, 45vh);
+    @include shadow();
+    overflow-y: scroll;
+    background-color: $back1;
+    margin: 20px auto 140px auto;
+    border-radius: 8px;
+    .schoolResItem {
+      @include initFont(14px, normal, $black1);
+      text-align: left;
+      padding: 20px;
+    }
+    #notResSet {
+      padding-top: 140px;
+      #notRes {
+        @include initFont(12px, normal, $gray1);
+      }
+    }
+    #selected {
+      background-color: #eeeeee;
+    }
+    #icon {
+      margin-top: 100px;
+    }
+  }
+}
+
+#join2 {
+  #mailInput {
+    width: 38%;
+    padding-left: 10px;
+  }
+  #mailTail {
+    width: 120px;
+    margin-right: 10px;
+    display: inline-block;
+  }
+  #codeLabel {
+    margin-top: 150px;
+  }
+  #codeInput {
+    width: calc(38% + 120px);
+    margin: 100px 10px 0 auto;
+    padding-left: 10px;
+  }
+  .smallBtn {
+    @include initSize(12%, 40px);
+    @include initFont(12px, 500, $back1);
+    @include shadow();
+    border-radius: 8px;
+    line-height: 40px;
+    position: relative;
+    display: inline-block;
+    background-color: $color2;
+  }
+  #done {
+    background-color: $gray1;
+  }
+}
+
+#join3, #join4 {
+  table {
+    @include shadow();
+    width: 90%;
+    margin: 0 auto;
+    background-color: $back1;
+    border-radius: 8px;
+  }
+  #all {
+    border-spacing: 15px;
+    margin-bottom: 20px;
+    #title {
+      @include initFont(14px);
+      text-align: left;
+    }
+    #check {
+      text-align: right;
+    }
+  }
+  #sub {
+    border-spacing: 15px;
+    #title, #subTitle {
+      text-align: left;
+    }
+    tr {
+      padding: 20px auto;
+    }
+    #title {
+      @include initFont(12px);
+    }
+    #subTitle {
+      @include initFont(11px, normal, $gray1);
+    }
+  }
+  #bottomInfo {
+    width: 90%;
+    margin: 10px auto 0 auto;
+    color: $gray1;
+    svg * {
+      stroke: $gray1;
+    }
+  }
+}
+
+#join4 {
+  #sub {
+    #title {
+      @include initFont(14px, normal);
+    }
+  }
+}
+
+#join5 {
+  $marginSize: 130px;
+  input {
+    width: calc(90% - 20px);
+    margin-bottom: 80px;
+    padding-left: 10px;
+  }
+  input[type=number] {
+    width: 25%;
+    margin: 0 1%;
+    margin-bottom: 150px;
+  }
+  #pwCheck {
+    margin-top: $marginSize;
+  }
+  #name {
+    margin-top: $marginSize*2;
+  }
+  #stdNum {
+    margin-top: $marginSize*3;
+  }
+  #phNum {
+    margin-top: $marginSize*4;
+  }
+}
