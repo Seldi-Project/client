@@ -31,7 +31,7 @@
       display: inline-block;
       position: fixed;
       top: 145px;
-      left: calc(50% - 183px);
+      left: calc(50% - 168px);
       color: $gray1;
       svg *{
         stroke: $gray1;
@@ -51,6 +51,22 @@
     margin: 40px auto;
   }
   #simpleItem {
+    input[type=radio] {
+      margin:0; padding:0; opacity:0; 
+      background:url(../source/Checknone.svg) no-repeat 0 0;  
+      width:0;
+    } 
+    input[type=radio] + label {
+      @include initFont(14px, normal, $gray1);
+      display: inline-block; 
+      text-align: left; height:20px; padding-left: 25px; 
+      background: url(../source/Checknone.svg) no-repeat 0 0; 
+      line-height: 130%; vertical-align: top;
+    }
+    input[type=radio]:checked + label {
+      @include initFont(14px, 500, $color2);
+      background: url(../source/Check.svg) no-repeat 0 0;
+    }
     #title, #subtitle {
       text-align: left;
     }
@@ -71,25 +87,71 @@
       text-align: right;
       margin: 20px auto;
     }
-    
+  }
+  #btnBlue {
+    svg {
+      path {
+        fill: $back1;
+      }
+    }
   }
 }
 
 #detailDiagnosisItem {
+  text-align: center;
+  #title, #subtitle {
+    text-align: left;
+  }
+  #title {
+    @include initFont(14px, 500, $black1);
+    margin: 0;
+    line-height: 22px;
+  }
   tr {
     td {
-      width: 40px;
+      width: 100px;
       text-align: center;
     }
   }
-  #radioSet {
-    #head {
-      text-align: center;
+  #detailRadioSet {
+    margin: 16px auto 0 auto;
+    input[type=radio] {
+      margin:0; padding:0; opacity:0;
+      width:0; display: none;
+    } 
+    input[type=radio] + label {
+      @include initFont(14px, normal, $gray1);
+      svg {
+        * {
+          stroke: $gray1;
+        }
+        path {
+          fill: $gray1;
+        }
+      }
+      display: inline-block; 
+      text-align: left; height:20px;
+      line-height: 130%; vertical-align: top;
     }
-    #body {
-      label {
-        margin: 0 0 0 5px;
+    input[type=radio]:checked + label {
+      @include initFont(14px, 500, $purple);
+      svg {
+        * {
+          stroke: $purple;
+        }
+        path {
+          fill: $purple;
+        }
       }
     }
+  }
+  #descript {
+    @include initSize(calc(90%), 125px);
+    @include initBorder(8px);
+    @include shadow();
+    @include initFont(14px, normal, $gray1);
+    margin-bottom: 30px;
+    padding: 16px;
+    resize: none;
   }
 }
