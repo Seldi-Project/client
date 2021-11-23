@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ReactComponent as FloatMask } from '../../source/FloatMask.svg';
