@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Certification from './Certification';
 import ConfirmedInfo from './ConfirmedInfo';
@@ -12,11 +12,25 @@ export default function BottomInfo({ DiagnosisState }) {
   const LiveStdNum = "1589"  //test
   const LiveSymNum = "46"  //test
 
+  const [scrollState, setScrollState] = useState(false);
+  const [bottom, setBottom] = useState("-35%");
+
+  //스크롤
+  const scroll = () => {
+    if (scrollState) {
+      setBottom("0px");
+      setScrollState(false);
+    } else {
+      setBottom("-35%");
+      setScrollState(true);
+    }
+  }
+
   return (
-    <div className="component" id="bottomInfoComponent">
+    <div className="component" id="bottomInfoComponent" style={{position: "fixed", bottom: bottom, transition: "bottom 1s"}}>
 
       {DiagnosisState &&
-      <div id="liveInfoWrap">
+      <div id="liveInfoWrap" onClick={scroll}>
         <table id="liveInfo">
           <tbody>
             <tr id="tr1">
