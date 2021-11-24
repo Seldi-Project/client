@@ -34,7 +34,7 @@ export default function Info({ DiagnosisState }) {
       </div>
         
       {DiagnosisState ?
-        <TimeSelect/>
+        <TimeSelect type="map"/>
       :
         <InfoBottom message="자가진단 완료하고, 실시간 교내 현황을 한눈에 확인하세요!"/>
       }

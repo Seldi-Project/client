@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useSelector } from 'react-redux';
 import Header from '../utils/Header';
 import { today } from '../utils/Reusable';
 import TimeSelect from '../utils/TimeSelect';
@@ -6,7 +7,9 @@ import '../../style/live.scss';
 import LiveItem from './LiveItem';
 
 export default function Live() {
-  const name = "소정";  //test
+  const { name } = useSelector(state => state.user.user);
+  const { option } = useSelector(state => state.live);
+
   const myData = { desc: "두통이 살짝 있어요.", state: "bad" }
   const data10 = [  //test
     { desc: "잔 기침이 조금 있음.", state: "soso", dist: 10 },
@@ -26,14 +29,14 @@ export default function Live() {
   
   return (
     <div className="component" id="liveComponent">
-      <Header title="실시간 유증상자"/>
+      <Header left={true} title="실시간 유증상자"/>
       <div id="fixedTop">
         <p className="subtitle">유증상이 있고, 정밀 자가진단을 한 사람들의 증상 내용이에요.</p>
-        <p className="subtitle">{name}님과 실시간 거리순으로 보여주고, 매일 자동으로 갱신해요!</p>
+        <p className="subtitle">{name.slice(1)}님과 실시간 거리순으로 보여주고, 매일 자동으로 갱신해요!</p>
         
         <div id="liveHeader">
           <span id="date">{today}</span>
-          <TimeSelect/>
+          <TimeSelect type="live"/>
         </div>
       </div>
       
