@@ -1,11 +1,22 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { resetUser } from '../../module/user';
+import { resetMap } from '../../module/map';
+import { resetLive } from '../../module/live';
 import '../../style/start.scss';
 import { ReactComponent as Logo } from '../../source/Logo.svg';
 import { ReactComponent as ExpandRight } from '../../source/ExpandRight.svg';
 
 export default function Start() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    dispatch(resetUser());
+    dispatch(resetMap());
+    dispatch(resetLive());
+  }, [dispatch])
 
   return (
     <div className="component" id="startComponent">
